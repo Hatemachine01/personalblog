@@ -5,9 +5,7 @@
     <div class="col-xs-12">
       <div class="text-center">
       	<li>
-      		<%= post.title %>
-      		<%= raw(post.content).truncate(358) %>
-      		<%= link_to "Read", post_path(post) %>
+      		<%=link_to post.title , post_path(post)%> || <%= truncate(post.content)%>
       	</li>
       </div>
       <br>
@@ -15,4 +13,7 @@
     <% end %>
   </div>
 </div>
+
+
+
 
