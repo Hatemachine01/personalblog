@@ -13,24 +13,24 @@
         <p>
               <%= link_to "x", post_path(post), method: :delete, data: {confirm: 'Are you sure?' }  %>
         </p>              
-
      </div>
       <br>
     </div>
     <% end %>
            <div id="paginator">
              <%= paginate @posts, remote: true %>
+            </div> 
+
+            <div class='container' id="tag_cloud">
+              <h6>Tags</h6>
+              <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+                <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+              <% end %>
             </div>
-            <% @posts.each do |post| %>
-           <div class="container" id="tag_cloud">
-                Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
-                <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-                <% end %>
-            </div>
-          <% end %>  
+  <% else %>
+
   </div>
 </div>
-  <% else %>
 
 <% end %>
 
