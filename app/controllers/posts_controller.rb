@@ -15,7 +15,6 @@ class PostsController < ApplicationController
   # Create action saves the post into database
   def create
     @post = Post.new(post_params)
-    p current_user
     @post.user_id = current_user.id
     @post.author = current_user.first_name
     if @post.save
