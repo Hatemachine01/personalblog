@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   # Index action to render all posts
   def index
-    @posts = Post.all
+     @posts = if params[:tag]
+      Post.tagged_with(params[:tag])
+    else
+      Post.all
+    end
   end
 
   # New action for creating post
@@ -58,7 +62,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content , :tag_list)
   end
 
   def find_post

@@ -1,13 +1,20 @@
 <div class="container">
+   <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content jumbotron">
+ <div class="container">
   <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content jumbotron">
     <div class="sticky-note"><%= fa_icon "sticky-note" %></div>
     <% if @posts %>
     <% @posts.each do |post| %>
     <div class="col-xs-12">
       <div class="text-center">
-  		  <h4><%= post.title %></h4>
-        <%= truncate(post.content, :length => 75 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%> 
-		  </div>
+        <h4><%= post.title %></h4>
+        <%= truncate(post.content, :length => 75 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%>
+              <div class="container" id="tag_cloud">
+                Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+                <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+                <% end %>
+              </div>  
+       </div>
       <br>
     </div>
     <% end %>
@@ -17,5 +24,5 @@
   <h1>Nothing to see here</h1>
 <% end %>
 
-
+                 
 
