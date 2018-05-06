@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'ckeditor', '~> 4.1'
 gem "font-awesome-rails"
 gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 
 
