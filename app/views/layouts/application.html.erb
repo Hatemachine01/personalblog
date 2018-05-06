@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
-    <%= render 'shared/alerts' %>
-    <script src="/assets/ckeditor/ckeditor.js"></script>
+    <div class="container">
+      <%= yield %>
+      <%= render 'shared/alerts' %>
+      <script src="/assets/ckeditor/ckeditor.js"></script>
+      <%= render 'shared/footer' %>
+    </div>  
   </body>
 </html>
 
