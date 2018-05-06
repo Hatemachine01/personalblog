@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   # Index action to render all posts
   def index
      @posts = if params[:tag]
-      Post.tagged_with(params[:tag])
+      Post.tagged_with(params[:tag]).page(params[:page]).per(2)
     else
-      Post.all
+      Post.all.page(params[:page]).per(2)
     end
   end
 
