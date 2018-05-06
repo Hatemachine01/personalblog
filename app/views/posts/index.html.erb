@@ -9,6 +9,9 @@
       <div class="text-center">
         <h4><%= post.title %></h4>
         <%= truncate(post.content, :length => 75 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%>
+        <p>
+              <%= link_to "x", post_path(post), method: :delete, data: {confirm: 'Are you sure?' }  %>
+        </p>
               <div class="container" id="tag_cloud">
                 Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
                 <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
