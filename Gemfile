@@ -23,7 +23,7 @@ gem "font-awesome-rails"
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'kaminari'
-
+gem 'newrelic_rpm'
 
 
 group :development, :test do
