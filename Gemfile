@@ -19,9 +19,9 @@ gem 'devise'
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'ckeditor', '~> 4.1'
+gem 'ckeditor'
 gem "font-awesome-rails"
-gem 'carrierwave', '~> 1.0'
+
 
 
 
