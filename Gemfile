@@ -20,6 +20,7 @@ gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'ckeditor', '~> 4.1'
+gem "font-awesome-rails"
 
 
 
