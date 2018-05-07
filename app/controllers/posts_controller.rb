@@ -7,7 +7,7 @@ class PostsController < ApplicationController
      @posts = if params[:tag]
       Post.tagged_with(params[:tag]).page(params[:page]).per(2)
     else
-      Post.all.page(params[:page]).per(2)
+      Post.order({ created_at: :desc }).all.page(params[:page]).per(2)
     end
   end
 
