@@ -24,6 +24,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'kaminari'
 gem 'newrelic_rpm'
+gem 'social-share-button'
 
 
 group :development, :test do

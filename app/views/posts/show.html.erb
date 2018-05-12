@@ -1,9 +1,12 @@
 <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content jumbotron">
 		<div class="card">
+			<%= p request.url %>
+
 	      <h2><%= @post.title %></h2>
 	      <h5><%= raw @post.created_at %></h5>
 	      <p><%= raw @post.content %></p>
 	    </div>
+	    <%= social_share_button_tag(@post.title,  :url => request.url , desc:  @post.title) %>
 	</div>
 </div>
 
