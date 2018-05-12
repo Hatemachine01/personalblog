@@ -25,6 +25,8 @@ gem "mini_magick"
 gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'social-share-button'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 
 
 group :development, :test do

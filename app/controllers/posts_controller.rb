@@ -1,16 +1,26 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete , :destroy]
   before_action :authenticate_user! , :except => [:index, :show]
+  before_action :set_search
+
+
 
   # Index action to render all posts
   def index
      @posts = if params[:tag]
       Post.tagged_with(params[:tag]).page(params[:page]).per(2)
+         
     else
       Post.order({ created_at: :desc }).all.page(params[:page]).per(2)
     end
+    if params[:q]
+       @results = @q.result
   end
 
+  end
+
+  
+ 
   # New action for creating post
   def new
     @post = Post.new
@@ -60,6 +70,8 @@ class PostsController < ApplicationController
   end
 
   private
+
+
 
   def post_params
     params.require(:post).permit(:title, :content , :tag_list)
