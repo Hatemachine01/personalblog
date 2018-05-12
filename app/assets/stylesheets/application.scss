@@ -52,6 +52,7 @@ h1 	{
 
 
 .jumbotron {
+	color:black;
 	background-color: white;
 	margin-top: 10px;
 	opacity: 0.9;
@@ -60,12 +61,22 @@ h1 	{
         font-size: 2em;
     }
     p {
-        font-size: 1.2em;
+        font-size: 1.5em;
         .btn {
             padding: 0.5em;
         }
+
+       color:black;
     }
 }
+
+
+.card {
+	
+	padding:10px;
+}
+
+
 .sticky-note {
 
 	font-size: 2em;

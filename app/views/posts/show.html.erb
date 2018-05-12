@@ -3,10 +3,12 @@
 			
 
 	      <h2><%= @post.title %></h2>
+	      <h3><%= social_share_button_tag(@post.title,  :url => request.url , desc:  @post.title) %></h3>
+	      <h4><%= @post.user.full_name %></h4>
 	      <h5><%= raw @post.created_at %></h5>
 	      <p><%= raw @post.content %></p>
+
 	    </div>
-	    <%= social_share_button_tag(@post.title,  :url => request.url , desc:  @post.title) %>
 	</div>
 </div>
 
