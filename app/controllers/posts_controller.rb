@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete , :destroy]
   before_action :authenticate_user! , :except => [:index, :show]
-  before_action :set_search
+
 
 
 

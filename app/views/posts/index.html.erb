@@ -6,7 +6,7 @@
       <div class="text-center" id="posts" >
      
         <h4><%= post.title %></h4>
-        <%= truncate(post.content, :length => 75 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%>
+        <%= truncate(post.content, :length => 20 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%>
         <p>
               <%= link_to "x", post_path(post), method: :delete, data: {confirm: 'Are you sure?' }  if current_user %>
         </p>              
