@@ -34,7 +34,7 @@
                  
   <div class="container">
     <% if @results %>
-    <h1>Results</h1>
+    <h2>Results</h2>
       <% @results.each do |result| %>
        <div class="results">
         <%=link_to "#{result.title}" , post_path(result)%>
