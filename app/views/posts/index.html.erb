@@ -14,34 +14,32 @@
       <br>
     </div>
     <% end %>
-           <div id="paginator">
-             <%= paginate @posts, remote: true %>
-            </div> 
+         <div id="paginator">
+           <%= paginate @posts, remote: true %>
+          </div> 
 
-            <div class='container' id="tag_cloud">
-              <h6>Tags</h6>
-              <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-                <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-              <% end %>
-            </div>
+          <div class='container' id="tag_cloud">
+            <h6>Tags</h6>
+            <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            <% end %>
+          </div>
   <% else %>
   </div>
 
 </div>
 <% end %>
 
-
-                 
-  <div class="container">
-    <% if @results %>
-    <h2>Results</h2>
-      <% @results.each do |result| %>
-       <div class="results">
-        <%=link_to "#{result.title}" , post_path(result)%>
-       </div>
-      <% end %>
+<div class="container">
+  <% if @results %>
+  <h2>Results</h2>
+    <% @results.each do |result| %>
+     <div class="results">
+      <%=link_to "#{result.title}" , post_path(result)%>
+     </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
 
 
 

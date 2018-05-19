@@ -5,8 +5,7 @@ describe 'Post navigation' do
 	before do
 		@user = User.create(first_name: 'Admin' , last_name:'Admin' , 
 							email: 'admin@gmail.com', password: "password", 
-							password_confirmation: "password")
-	
+						password_confirmation: "password")	
     	login_as(@user, :scope => :user)
   	end
   
@@ -16,9 +15,7 @@ describe 'Post navigation' do
 
       fill_in 'post[title]', with: "Kanye and I"
       fill_in 'post[content]', with: "Complicated"
-  
-  
-
+   
       click_on "Create Post"
 
       expect(page).to have_content("Kanye")
