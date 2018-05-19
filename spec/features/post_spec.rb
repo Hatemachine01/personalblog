@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 describe 'Post navigation' do
+	
+	before do
+		@user = User.create(first_name: 'Admin' , last_name:'Admin' , 
+							email: 'admin@gmail.com', password: "password", 
+							password_confirmation: "password")
+	
+    	login_as(@user, :scope => :user)
+  	end
+  
   describe 'creation' do
     it 'can be created' do
       visit new_post_path
@@ -10,9 +19,10 @@ describe 'Post navigation' do
   
   
 
-      click_on "Submit"
+      click_on "Create Post"
 
       expect(page).to have_content("Kanye")
     end
   end
 end
+
