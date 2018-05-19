@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Post navigation' do
   describe 'creation' do
-    it 'can register with full set of user attributes' do
+    it 'can be created' do
       visit new_post_path
 
       fill_in 'post[title]', with: "Kanye and I"
