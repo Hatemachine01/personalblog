@@ -14,7 +14,8 @@
       <br>
     </div>
     <% end %>
-         <div id="paginator">
+
+           <div id="paginator">
            <%= paginate @posts, remote: true %>
           </div> 
 
@@ -31,15 +32,13 @@
 <% end %>
 
 <div class="container">
-  <% if  @results.length > 1 %>
+  <% if  @results %>
   <h2>Results</h2>
     <% @results.each do |result| %>
      <div class="results">
       <%=link_to "#{result.title}" , post_path(result)%>
      </div>
     <% end %>
-  <% else %>
-   <p>No Results were found with those keywords.</p>  
   <% end %>
 </div>
 

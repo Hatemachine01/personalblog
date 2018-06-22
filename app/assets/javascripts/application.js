@@ -11,10 +11,8 @@
 // about supported directives.
 //
 
-//= require jquery
-//= require jquery_ujs
 //= require ckeditor/init
-//= require turbolinks
-//= require bootstrap-sprockets
 //= require social-share-button
+//= require jquery_ujs
+//= require turbolinks
 //= require_tree .
