@@ -8,10 +8,10 @@ class PostsController < ApplicationController
   # Index action to render all posts
   def index
      @posts = if params[:tag]
-      Post.tagged_with(params[:tag]).page(params[:page]).per(2)
+      Post.tagged_with(params[:tag]).page(params[:page]).per(4)
          
     else
-      Post.order({ created_at: :desc }).all.page(params[:page]).per(2)
+      Post.order({ created_at: :desc }).all.page(params[:page]).per(4)
     end
     if params[:q]
        @results = @q.result
