@@ -37,10 +37,10 @@
       <% if  @results.empty?  %>
         <h5>No results found with those keywords</h5>
       <% else %>        
-        <% @results.each do |result| %>
         <div class="results">
-          <h2>results : </h2>
-        <%=link_to "#{result.title}" , post_path(result)%>
+          <h2>results: </h2>
+          <% @results.each do |result| %>
+          <%=link_to "#{result.title}" , post_path(result)%>
         </div>
      <% end %>
     <% end %>
