@@ -6,9 +6,9 @@
       <div class="text-left" id="posts" >
      
         <h4>
-          <%= link_to post.title, post_path(post) %>
+          <%= link_to post.title, post_path(post) %> || <%= post.created_at.strftime("%m-%d-%Y")%>
         </h4>
-        <%= truncate(post.content, :length => 100 , :escape => false) %> || <%= post.created_at.strftime("%m-%d-%Y")%> <%=link_to 'Read more' , post_path(post)%>
+        <%= truncate(post.content, :length => 100 , :escape => false) %> || <%=link_to 'Read more' , post_path(post)%>
           <%= link_to "x", post_path(post), method: :delete, data: {confirm: 'Are you sure?' }  if current_user %>
         <p>
          
